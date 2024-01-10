@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: root
+    password: Will1rule$
+    url: jdbc:mysql://localhost:3306/dog_rescue
+  
+  jpa:
+    hibernate:
+      #none tells hibernate not to create the tbales
+      #create tells hibernate to drop existing tables then create new ones
+      #update tells hibernate to compare the pre-existing schema and update it
+      #---> with the new one
+      #create-drop similar to update, but it will drop the tables a program is stopped
+      #validate tells hibernate to check if the tables exist otherwise throw an exception
+      ddl-auto: none
+    show-sql: true
+    #tells spring boot to not insert data before the tables are created
+    #defer-datasource-initialization: true
+ 
+  sql:
+    init:
+      #never means that sql will not create and populate the tables
+      #always means that sql will create and populate the tabbles
+      mode: always
+      
